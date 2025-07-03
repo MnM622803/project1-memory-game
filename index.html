@@ -1,15 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-       <script defer src="./js/app.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-  
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="./js/app.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
+    <a class="navbar-brand" href="#">🃏</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <header class="text-center mt-4">
+    <p id="result-display" class="fs-3 fw-bold">click start !</p>
+    <p id="player-choice" class="fs-5 text-secondary"></p>
+    <p id="player-score" class="fs-5 text-success"></p>
+  </header>
+
+  <main class="container d-flex flex-column align-items-center">
+    <div class="row row-cols-3 g-3 justify-content-center">
     
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+      <div class="col"><div class="card game-card" data-card-value=""><img class="card-img" src="" /></div></div>
+    </div>
+
+    <div class="my-4 d-flex flex-column align-items-center gap-2">
+      <button id="startButton" class="btn btn-outline-dark px-5">start</button>
+      <button id="resetButton" class="btn btn-outline-secondary px-4">reset game</button>
+    </div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  How to Play
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">How to play</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>1. Choose Your Move:</strong><br>
+     Tap one of the buttons to select your move: 🪨 Rock, 📄 Paper, or ✂️ Scissors.</p>
+  <p><strong>2. Wait for the Result:</strong><br>
+     The computer will randomly pick a move.</p>
+  <p><strong>3. Check Who Wins:</strong><br>
+     - 🪨 Rock beats ✂️ Scissors<br>
+     - ✂️ Scissors beats 📄 Paper<br>
+     - 📄 Paper beats 🪨 Rock<br>
+     - The same move is a tie!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</div>
 </body>
-</html>
+
+</html> 
+
+  

@@ -1,0 +1,78 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+
+body {
+  font-family: monospace;
+  text-align: center;
+  background-color: #494646;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+#result-display {
+  min-height: 20px;
+  font-weight: bold;
+}
+
+
+.card {
+  width: 120px;
+  height: 160px;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.bing.com/th/id/OIP.01r52uDIwrDPAI1A6Xx8mwHaHa') no-repeat center / cover;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+ card is flipped */
+.card.flipped .card-img {
+  transform: rotateY(0deg);
+}
+
+.card.flipped::before {
+  transform: rotateY(180deg);
+}
+
+
+.card.matched {
+  outline: 3px solid limegreen;
+}
+
+.row-cols-3 > .col {
+  display: flex;
+  justify-content: center;
+
+}
+
+button {
+  font-size: 1rem;
+}

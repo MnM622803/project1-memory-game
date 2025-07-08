@@ -1,5 +1,4 @@
-
-/*---------- Variables (state) ---------*/
+/*---------- Variables ---------*/
 
 let firstCard = null;
 let secondCard = null;
@@ -9,7 +8,6 @@ let wrongGuesses = 0;
 let isFlipping = false;
 let timeLeft = 30;
 let timerInterval = null;
-const maxWrongGuesses = 5; 
 
 /*-------------- Constants -------------*/
 const resultDisplayEl = document.querySelector('#result-display');
@@ -18,6 +16,7 @@ const playerScoreEl = document.querySelector('#player-score');
 const cards = document.querySelectorAll('.card');
 const resetBtn = document.querySelector('#resetButton');
 const startBtn = document.querySelector('#startButton');
+const nWrongGuesses = 5;
 
 
 const timerDisplay = document.createElement('p');
@@ -87,14 +86,14 @@ function checkForMatch() {
     }
   } else {
     wrongGuesses++;
-    resultDisplayEl.textContent = `❌ Wrong! (${wrongGuesses}/${maxWrongGuesses})`;
+    resultDisplayEl.textContent = `❌ Wrong! (${wrongGuesses}/${nWrongGuesses})`;
 
     setTimeout(() => {
       firstCard.classList.remove('flipped');
       secondCard.classList.remove('flipped');
       resetFlip();
 
-      if (wrongGuesses >= maxWrongGuesses) {
+      if (wrongGuesses >= nWrongGuesses) {
         endGame(false);
       }
     }, 1000);
@@ -136,7 +135,7 @@ function startGame() {
       card.classList.remove('flipped');
       card.style.pointerEvents = '';
     });
-    resultDisplayEl.textContent = '🎮 Game started! Find all matches!';
+    resultDisplayEl.textContent = '🎮 Game started!';
     startTimer();
   }, 3000);
 }
@@ -165,10 +164,11 @@ function resetGame() {
 function endGame(won) {
   clearInterval(timerInterval);
   cards.forEach(card => card.style.pointerEvents = 'none');
-  resultDisplayEl.textContent = won ? '🎉 You Win! 🎉' : '⏰ You Lose! Try Again.';
+  resultDisplayEl.textContent = won ? '🎉 You Win!' : ' You Lose! Try Again.';
 }
 
 /* ---------- Event Listeners ---------- */
+
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
 });

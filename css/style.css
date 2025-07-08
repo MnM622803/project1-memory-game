@@ -14,7 +14,7 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  color: white;
+  color: rgb(194, 187, 187);
 }
 
 #result-display {
@@ -22,7 +22,7 @@ header {
   font-weight: bold;
 }
 
-
+/* ---------- card css ---------- */
 .card {
   width: 120px;
   height: 160px;
@@ -53,7 +53,7 @@ header {
   transform: rotateY(0deg);
   z-index: 2;
 }
- card is flipped */
+
 .card.flipped .card-img {
   transform: rotateY(0deg);
 }
@@ -66,7 +66,7 @@ header {
 .card.matched {
   outline: 3px solid limegreen;
 }
-
+/* ---------- card css ---------- */
 .row-cols-3 > .col {
   display: flex;
   justify-content: center;
